@@ -2,7 +2,7 @@
 # Naive Bayes 分類器
 
 ## 概述
-這個PROJECT是一個簡單的 Naive Bayes 分類器實現，用於對數據進行分類。該分類器具有兩個版本，其中一個是針對特徵獨立的情況，另一個考慮了特徵之間的協方差。
+這個PROJECT是一個簡單的 Naive Bayes 分類器實現，用於對資料進行分類。該分類器具有兩個版本，其中一個是針對特徵獨立的情況，另一個考慮了特徵之間的協方差。
 
 ## 使用方法
 
@@ -13,7 +13,7 @@
 pip install numpy pandas scipy scikit-learn
 ```
 
-### 數據集
+### 資料集
 本項目使用了名為 "wine.data" 的資料集，包含葡萄酒的化學特性。您可以通過以下鏈接獲取資料集：[wine.data](連接到資料集)
 
 ### 執行示例
@@ -23,17 +23,17 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from your_module_name import NaiveBayesClassifier  # 請替換為你的模塊名稱
 
-# 讀取數據集
+# 讀取資料集
 feature_names = ['label', 'Alcohol', 'Malic acid', ...]  # 請添加完整的特徵名稱
 data = pd.read_csv("wine.data", names=feature_names)
 data = data.sample(frac=1)
 
-# 劃分數據集
+# 劃分資料集
 half = len(data) // 2
 train = data.iloc[:half]
 test = data.iloc[half:]
 
-# 數據預處理
+# 資料預處理
 scaler = StandardScaler()
 labels = train.iloc[:, 0].values
 labels_test = test.iloc[:, 0].values
